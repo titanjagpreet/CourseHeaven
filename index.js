@@ -1,41 +1,18 @@
 const express = require('express');
+const { userRouter } = require('./routes/user');
+const { courseRouter } = require('./routes/course');
 const cors = require('cors');
 const port = process.env.PORT;
 
 const app = express();
 
+const router = express.Router();
+
 app.use(cors());
 app.use(express.json());
 
-app.post("/user/signup", (req, res) => {
-    res.json({
-        message: "Signup endpoint"
-    })
-})
-
-app.post("/user/signin", (req, res) => {
-    res.json({
-        message: "Signin endpoint"
-    })
-})
-
-app.post("/course/purchase", (req, res) => {
-    res.json({
-        message: "Purchase Courses endpoint"
-    })
-})
-
-app.get("/courses", (req, res) => {
-    res.json({
-        message: "View Courses endpoint"
-    })
-})
-
-app.get("/user/purchases", (req, res) => {
-    res.json({
-        message: "Purchases endpoint"
-    })
-})
+app.use("/user", userRouter);
+app.use("/course", courseRouter);
 
 app.listen(port, ()=> {
     console.log(`Server is running on port ${port}...`);
