@@ -1,6 +1,7 @@
 const { Router } = require('express');
 
 const adminRouter = Router();
+const { adminModel } = require('../models/db');
 
 // adminRouter.use(adminMiddleware);
 
