@@ -12,7 +12,6 @@ async function connectDB() {
         console.error("❌ Failed to connect to MongoDB:", err);
     }
 }
-connectDB();
 
 // User Schema
 const UserSchema = new Schema({
@@ -143,5 +142,6 @@ module.exports = {
     userModel,
     adminModel,
     courseModel,
-    purchaseModel
+    purchaseModel,
+    connectDB
 }
