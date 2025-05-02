@@ -1,12 +1,16 @@
 const express = require('express');
-const { userRouter } = require('./routes/user');
-const { courseRouter } = require('./routes/course');
-const { adminRouter  } = require('./routes/admin');
 const cors = require('cors');
 require('dotenv').config();
 
+const { userRouter } = require('./routes/userRoutes');
+const { courseRouter } = require('./routes/courseRoutes');
+const { adminRouter  } = require('./routes/adminRoutes');
+const { connectDB } = require('./models/db');
+
 const port = process.env.PORT;
 const app = express();
+
+connectDB();
 
 app.use(cors());
 app.use(express.json());
