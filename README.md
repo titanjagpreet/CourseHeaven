@@ -130,8 +130,8 @@ A full-stack backend server built with **Node.js**, **Express**, and **MongoDB**
 ### 1. Clone the repo
 
 ```bash
-git clone <https://github.com/your-username/edutech-api.git>
-cd edutech-api
+git clone <https://github.com/titanjagpreet/CourseHeaven.git>
+cd CourseHeaven
 ```
 
 ### 2. Install Dependencies
