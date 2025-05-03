@@ -1,11 +1,12 @@
 const { Router } = require('express');
 
 const courseRouter = Router();
-const { courseModel } = require('../models/db');
+const { purchaseCourse, previewCourse } = require('../controllers/courseController');
+const { userMiddleware } = require('../middlewares/userMw');
 
-courseRouter.post("/purchase", );
+courseRouter.post("/purchase", userMiddleware, purchaseCourse);
 
-courseRouter.get("/preview", );
+courseRouter.get("/preview", previewCourse);
 
 module.exports = {
     courseRouter: courseRouter
