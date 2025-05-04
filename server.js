@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
+const { rateLimiter } = require('./middlewares/rateLimiter');
 const { userRouter } = require('./routes/userRoutes');
 const { courseRouter } = require('./routes/courseRoutes');
 const { adminRouter  } = require('./routes/adminRoutes');
@@ -14,6 +15,7 @@ connectDB();
 
 app.use(cors());
 app.use(express.json());
+app.use(rateLimiter);
 
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/admin", adminRouter);
