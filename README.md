@@ -35,6 +35,8 @@ A full-stack backend server built with **Node.js**, **Express**, and **MongoDB**
 
 │   ├── adminMw.js
 
+│   ├── rateLimiter.js
+
 │   ├── userMw.js
 
 │   ├── validateAdminSignin.js
@@ -168,7 +170,6 @@ Server runs on `http://localhost:5000` (or your specified port).
 - ✍️ Admin course editing dashboard (frontend)
 - 📊 Admin analytics (sales, views)
 - ✅ Use cookies instead of JWT for authentication
-- ✅ Add a rate limiting middleware to prevent abuse
 - 🔧 Frontend in EJS (low priority)
 - ⚛️ Frontend in **React** for better UI/UX and SPA functionality
 
